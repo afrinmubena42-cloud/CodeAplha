@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+</head>
+<body>
+
+<h2>Your Cart</h2>
+<ul id="list"></ul>
+
+<button onclick="order()">Place Order</button>
+
+<script>
+let cart=JSON.parse(localStorage.getItem("cart"))||[];
+let list=document.getElementById("list");
+
+cart.forEach(i=>{
+  let li=document.createElement("li");
+  li.innerText=i;
+  list.appendChild(li);
+});
+
+function order(){
+  alert("Order placed successfully!");
+  localStorage.clear();
+}
+</script>
+
+</body>
+</html>

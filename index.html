@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SmartCart AI</title>
+  <style>
+    body { font-family: Arial; background:#f4f4f4; }
+    .product {
+      background:white; margin:10px;
+      padding:15px; border-radius:8px;
+    }
+    button { background:#4CAF50; color:white; border:none; padding:8px; }
+  </style>
+</head>
+<body>
+
+<script>
+if(localStorage.getItem("loggedIn")!=="yes"){
+  window.location.href="login.html";
+}
+</script>
+
+<h1>🛒 SmartCart AI</h1>
+
+<h2>🤖 AI Recommended</h2>
+<div class="product">Smart Speaker – ₹1499</div>
+
+<h2>Products</h2>
+
+<div class="product">
+  <h3>Wireless Headphones</h3>
+  <p>₹1999</p>
+  <button onclick="add('Headphones')">Add to Cart</button>
+</div>
+
+<div class="product">
+  <h3>Smart Watch</h3>
+  <p>₹2999</p>
+  <button onclick="add('Watch')">Add to Cart</button>
+</div>
+
+<a href="cart.html">Go to Cart</a>
+
+<script>
+function add(item){
+  let cart=JSON.parse(localStorage.getItem("cart"))||[];
+  cart.push(item);
+  localStorage.setItem("cart",JSON.stringify(cart));
+  alert(item+" added");
+}
+</script>
+
+</body>
+</html>

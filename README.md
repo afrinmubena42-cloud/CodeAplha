@@ -1,1 +1,1 @@
-# CodeAplha
+# smartcart-ai
